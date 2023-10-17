@@ -6,7 +6,7 @@
 /*   By: lolefevr <lolefevr@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 12:23:27 by lolefevr          #+#    #+#             */
-/*   Updated: 2023/10/17 11:38:52 by lolefevr         ###   ########.fr       */
+/*   Updated: 2023/10/17 11:43:58 by lolefevr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class ScalarConverter
 		ScalarConverter &operator=(ScalarConverter const &other);
 		ScalarConverter(ScalarConverter const &other);
 		~ScalarConverter();
-		ScarlarConverter();
+		ScalarConverter();
 
 	public:
 
