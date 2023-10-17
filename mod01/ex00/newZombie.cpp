@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   newZombie.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lolefevr <lolefevr@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 16:00:46 by lolefevr          #+#    #+#             */
-/*   Updated: 2023/10/17 16:00:52 by lolefevr         ###   ########.fr       */
+/*   Created: 2023/08/07 14:34:12 by lolefevr          #+#    #+#             */
+/*   Updated: 2023/08/07 18:31:34 by lolefevr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "Zombie.hpp"
 
-template <typename T>
-void iter(T *array, int lenght, void (*function)(T&))
+Zombie*	newZombie( std::string name)
 {
-	for (int i = 0; i < lenght; i++)
-		function(array[i]);
+	return (new Zombie(name));
 }

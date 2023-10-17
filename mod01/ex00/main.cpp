@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lolefevr <lolefevr@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 16:00:46 by lolefevr          #+#    #+#             */
-/*   Updated: 2023/10/17 16:00:52 by lolefevr         ###   ########.fr       */
+/*   Created: 2023/08/07 14:34:12 by lolefevr          #+#    #+#             */
+/*   Updated: 2023/08/07 22:49:15 by lolefevr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "Zombie.hpp"
 
-template <typename T>
-void iter(T *array, int lenght, void (*function)(T&))
+int	main(void)
 {
-	for (int i = 0; i < lenght; i++)
-		function(array[i]);
+	Zombie	*zombie;
+	zombie = newZombie("Zaza");
+
+	randomChump("Zizi");
+	delete zombie;
+	std::cout << "Fin\n";
+	return (0);
 }

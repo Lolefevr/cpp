@@ -1,20 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lolefevr <lolefevr@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 16:00:46 by lolefevr          #+#    #+#             */
-/*   Updated: 2023/10/17 16:00:52 by lolefevr         ###   ########.fr       */
+/*   Created: 2023/08/07 13:04:07 by lolefevr          #+#    #+#             */
+/*   Updated: 2023/08/07 18:32:09 by lolefevr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
 
-template <typename T>
-void iter(T *array, int lenght, void (*function)(T&))
+# include <iostream>
+# include <string.h>
+
+class Zombie
 {
-	for (int i = 0; i < lenght; i++)
-		function(array[i]);
-}
+	public:
+
+	Zombie(std::string name);
+	~Zombie();
+
+	void	announce(void);
+
+	private:
+
+	std::string	name;
+};
+
+Zombie*	newZombie( std::string name);
+void	randomChump(std::string name);
+
+#endif

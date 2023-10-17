@@ -1,20 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lolefevr <lolefevr@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 16:00:46 by lolefevr          #+#    #+#             */
-/*   Updated: 2023/10/17 16:00:52 by lolefevr         ###   ########.fr       */
+/*   Created: 2023/08/14 10:11:19 by lolefevr          #+#    #+#             */
+/*   Updated: 2023/08/14 11:01:42 by lolefevr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "Harl.hpp"
+#include <iostream>
 
-template <typename T>
-void iter(T *array, int lenght, void (*function)(T&))
+int main()
 {
-	for (int i = 0; i < lenght; i++)
-		function(array[i]);
+	Harl	harl;
+
+	harl.complain("DEBUG");
+	harl.complain("INFO");
+	harl.complain("WARNING");
+	harl.complain("ERROR");
+	harl.complain("TOTO");
+	return (0);
 }

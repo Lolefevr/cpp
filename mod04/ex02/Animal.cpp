@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lolefevr <lolefevr@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 16:00:46 by lolefevr          #+#    #+#             */
-/*   Updated: 2023/10/17 16:00:52 by lolefevr         ###   ########.fr       */
+/*   Created: 2023/08/17 09:05:24 by lolefevr          #+#    #+#             */
+/*   Updated: 2023/08/30 10:24:09 by lolefevr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "Animal.hpp"
 
-template <typename T>
-void iter(T *array, int lenght, void (*function)(T&))
+Animal::Animal()
 {
-	for (int i = 0; i < lenght; i++)
-		function(array[i]);
+	std::cout << "Constructor Animal called" << std::endl;
+	this->_type = "Random Animal";
+}
+
+Animal::~Animal()
+{
+	std::cout << "Destructeur Animal called" << std::endl;
+}
+
+std::string	Animal::getType() const
+{
+	return this->_type;
 }

@@ -1,20 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lolefevr <lolefevr@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 16:00:46 by lolefevr          #+#    #+#             */
-/*   Updated: 2023/10/17 16:00:52 by lolefevr         ###   ########.fr       */
+/*   Created: 2023/08/15 11:00:57 by lolefevr          #+#    #+#             */
+/*   Updated: 2023/08/15 23:29:17 by lolefevr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef FIXED_HPP
+# define FIXED_HPP
 
-template <typename T>
-void iter(T *array, int lenght, void (*function)(T&))
+#include <iostream>
+
+class Fixed
 {
-	for (int i = 0; i < lenght; i++)
-		function(array[i]);
-}
+	private:
+
+	static int const bit = 8;
+	int	floatFix;
+
+	public:
+		Fixed();
+		~Fixed();
+		Fixed(const Fixed &other);
+		Fixed &operator=(const Fixed &other);
+		int		getRawBits(void) const;
+		void	setRawBits(int const raw);
+};
+
+#endif

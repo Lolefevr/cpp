@@ -1,20 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lolefevr <lolefevr@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 16:00:46 by lolefevr          #+#    #+#             */
-/*   Updated: 2023/10/17 16:00:52 by lolefevr         ###   ########.fr       */
+/*   Created: 2023/08/30 11:43:43 by lolefevr          #+#    #+#             */
+/*   Updated: 2023/09/23 14:57:25 by lolefevr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+ #pragma once
 
-template <typename T>
-void iter(T *array, int lenght, void (*function)(T&))
+ #include "hfile.hpp"
+ class AMateria;
+ class ICharacter;
+
+class Cure : public AMateria
 {
-	for (int i = 0; i < lenght; i++)
-		function(array[i]);
-}
+	protected :
+
+	public :
+
+	Cure();
+	Cure(std::string const &type);
+	Cure(const Cure &other);
+	Cure	&operator=(const Cure &other);
+	~Cure();
+
+	AMateria *clone() const;
+	void use(ICharacter &target);
+};

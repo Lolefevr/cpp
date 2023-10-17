@@ -1,20 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lolefevr <lolefevr@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 16:00:46 by lolefevr          #+#    #+#             */
-/*   Updated: 2023/10/17 16:00:52 by lolefevr         ###   ########.fr       */
+/*   Created: 2023/08/07 13:17:47 by lolefevr          #+#    #+#             */
+/*   Updated: 2023/08/12 18:52:18 by lolefevr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "Zombie.hpp"
 
-template <typename T>
-void iter(T *array, int lenght, void (*function)(T&))
+Zombie::Zombie()
 {
-	for (int i = 0; i < lenght; i++)
-		function(array[i]);
+	return ;
+}
+
+Zombie::Zombie(std::string str)
+{
+	this->name = str;
+	this->announce();
+	return ;
+}
+
+Zombie::~Zombie()
+{
+	std::cout << "<" << this->name << "> " << "zombie died...again...\n";
+	return ;
+}
+
+void	Zombie::announce()
+{
+	std::cout << this->name << " : BraiiiiiiinnnzzzZ..." << std::endl;
 }

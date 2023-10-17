@@ -1,20 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lolefevr <lolefevr@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 16:00:46 by lolefevr          #+#    #+#             */
-/*   Updated: 2023/10/17 16:00:52 by lolefevr         ###   ########.fr       */
+/*   Created: 2023/08/09 01:34:06 by lolefevr          #+#    #+#             */
+/*   Updated: 2023/08/12 18:54:56 by lolefevr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "HumanB.hpp"
+#include "Weapon.hpp"
 
-template <typename T>
-void iter(T *array, int lenght, void (*function)(T&))
+HumanB::HumanB(std::string name)
 {
-	for (int i = 0; i < lenght; i++)
-		function(array[i]);
+    this->name = name;
+    return ;
+}
+
+HumanB::~HumanB()
+{
+    return ;
+}
+
+void    HumanB::attack()
+{
+    std::cout << this->name << " Attack with " << weapon->getType() << std::endl;
+}
+
+void    HumanB::setWeapon(Weapon &newweapon)
+{
+	weapon = &newweapon;
 }

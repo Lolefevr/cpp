@@ -5,42 +5,38 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lolefevr <lolefevr@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 16:01:04 by lolefevr          #+#    #+#             */
-/*   Updated: 2023/10/17 16:13:07 by lolefevr         ###   ########.fr       */
+/*   Created: 2023/08/06 02:20:28 by lolefevr          #+#    #+#             */
+/*   Updated: 2023/08/12 18:46:04 by lolefevr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "iter.hpp"
-#include <iostream>
+#include "Phonebook.hpp"
 
-template <typename T>
-void	addone(T &i)
+int	main(void)
 {
-	i++;
-}
+	Phonebook	phonebook;
+	Contact		contact;
+	std::string	line;
 
-template <typename T>
-void	print(T &i)
-{
-	std::cout << i;
-	return;
-}
-
-int	main()
-{
-	int array[] = {1,2,3,4,5,6,7};
-	char str[] = "helloWorld";
-
-	iter(array, 7, &print);
-	std::cout << std::endl;
-	iter(array, 7, &addone);
-	std::cout << "addone use" << std::endl;
-	iter(array, 7, &print);
-	std::cout << std::endl;
-	iter(str, 8, &print);
-	std::cout << std::endl;
-	iter(str, 8, &addone);
-	iter(str, 8, &print);
+	std::cout << std::string(40, '\n');
+	while (1)
+	{
+		phonebook.display_menu();
+		usleep(100000);
+		std::cout << "Choose a command >> ";
+		if (std::getline(std::cin, line))
+		{
+			if (line == "EXIT")
+				break ;
+			if (line == "SEARCH")
+			{
+				phonebook.display_contact();
+				phonebook.search_contact();
+			}
+			if (line == "ADD")
+				phonebook.add_contact();
+		}
+	}
 	std::cout << std::endl;
 	return (0);
 }

@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lolefevr <lolefevr@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 16:00:46 by lolefevr          #+#    #+#             */
-/*   Updated: 2023/10/17 16:00:52 by lolefevr         ###   ########.fr       */
+/*   Created: 2023/08/19 10:18:29 by lolefevr          #+#    #+#             */
+/*   Updated: 2023/08/21 11:18:19 by lolefevr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "Brain.hpp"
 
-template <typename T>
-void iter(T *array, int lenght, void (*function)(T&))
+Brain::Brain()
 {
-	for (int i = 0; i < lenght; i++)
-		function(array[i]);
+	std::cout << " Constructor Brain called" << std::endl;
+}
+
+Brain::~Brain()
+{
+	std::cout << " Destructor Brain called" << std::endl;
 }

@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lolefevr <lolefevr@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 16:00:46 by lolefevr          #+#    #+#             */
-/*   Updated: 2023/10/17 16:00:52 by lolefevr         ###   ########.fr       */
+/*   Created: 2023/08/07 22:55:14 by lolefevr          #+#    #+#             */
+/*   Updated: 2023/08/12 18:53:32 by lolefevr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "Zombie.hpp"
 
-template <typename T>
-void iter(T *array, int lenght, void (*function)(T&))
+Zombie *zombieHorde(int n, std::string name)
 {
-	for (int i = 0; i < lenght; i++)
-		function(array[i]);
+    Zombie* myZombie = new Zombie[n];
+
+    for (int i = 0; i < n; i++)
+    {
+        myZombie[i] = Zombie(name);
+    }
+	return (myZombie);
 }

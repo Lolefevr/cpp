@@ -1,20 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lolefevr <lolefevr@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 16:00:46 by lolefevr          #+#    #+#             */
-/*   Updated: 2023/10/17 16:00:52 by lolefevr         ###   ########.fr       */
+/*   Created: 2023/08/14 10:06:05 by lolefevr          #+#    #+#             */
+/*   Updated: 2023/08/14 18:01:00 by lolefevr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef HARL_HPP
+# define HARL_HPP
 
-template <typename T>
-void iter(T *array, int lenght, void (*function)(T&))
+# include <string>
+
+class Harl
 {
-	for (int i = 0; i < lenght; i++)
-		function(array[i]);
-}
+	public:
+
+	//typedef void (Harl::*functionPtr)();
+
+	Harl();
+	~Harl();
+
+	void		complain(std::string level);
+
+	private:
+
+	//functionPtr	funcPtr[4];
+
+	void		debug(void);
+	void		info(void);
+	void		warning(void);
+	void		error(void);
+
+};
+
+#endif

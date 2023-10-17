@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lolefevr <lolefevr@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 16:00:46 by lolefevr          #+#    #+#             */
-/*   Updated: 2023/10/17 16:00:52 by lolefevr         ###   ########.fr       */
+/*   Created: 2023/08/17 09:12:11 by lolefevr          #+#    #+#             */
+/*   Updated: 2023/08/19 09:26:35 by lolefevr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-template <typename T>
-void iter(T *array, int lenght, void (*function)(T&))
+#include "WrongAnimal.hpp"
+
+class WrongCat : public WrongAnimal
 {
-	for (int i = 0; i < lenght; i++)
-		function(array[i]);
-}
+	private:
+
+	public:
+
+	WrongCat();
+	~WrongCat();
+
+	void	makeSound() const;
+};

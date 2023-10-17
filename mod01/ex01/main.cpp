@@ -1,20 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lolefevr <lolefevr@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 16:00:46 by lolefevr          #+#    #+#             */
-/*   Updated: 2023/10/17 16:00:52 by lolefevr         ###   ########.fr       */
+/*   Created: 2023/08/07 14:34:12 by lolefevr          #+#    #+#             */
+/*   Updated: 2023/08/12 18:52:10 by lolefevr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "Zombie.hpp"
 
-template <typename T>
-void iter(T *array, int lenght, void (*function)(T&))
+int	main(void)
 {
-	for (int i = 0; i < lenght; i++)
-		function(array[i]);
+	Zombie		*zombies;
+	int			n;
+	std::string	name;
+    std::cout << "Entrez la taille du tableau de Zombies : ";
+    std::cin >> n;
+    std::cout << "Entrez le nom des Zombies : ";
+    std::cin >> name;
+	zombies = zombieHorde(n , name);
+	for (int i = 0; i < n; i++)
+	{
+        zombies[i].announce();
+    }
+	delete[] zombies;
+	return (0);
 }

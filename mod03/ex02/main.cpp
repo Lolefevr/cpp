@@ -1,20 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lolefevr <lolefevr@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 16:00:46 by lolefevr          #+#    #+#             */
-/*   Updated: 2023/10/17 16:00:52 by lolefevr         ###   ########.fr       */
+/*   Created: 2023/09/26 11:21:31 by lolefevr          #+#    #+#             */
+/*   Updated: 2023/09/26 11:21:32 by lolefevr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
-template <typename T>
-void iter(T *array, int lenght, void (*function)(T&))
+int main()
 {
-	for (int i = 0; i < lenght; i++)
-		function(array[i]);
+	ScavTrap P1("P1");
+	FragTrap P2("P2");
+
+	P1.attack("ennemy");
+	P1.takeDamage(20);
+	P1.beRepaired(10);
+	P1.guardGate();
+
+	P2.attack("ennemy");
+	P2.takeDamage(20);
+	P2.beRepaired(10);
+	P2.highFivesGuys();
+	return (0);
 }

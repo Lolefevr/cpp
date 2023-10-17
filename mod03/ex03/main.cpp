@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lolefevr <lolefevr@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 16:00:46 by lolefevr          #+#    #+#             */
-/*   Updated: 2023/10/17 16:00:52 by lolefevr         ###   ########.fr       */
+/*   Created: 2023/08/16 15:53:24 by lolefevr          #+#    #+#             */
+/*   Updated: 2023/08/16 15:54:22 by lolefevr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
-template <typename T>
-void iter(T *array, int lenght, void (*function)(T&))
+int main()
 {
-	for (int i = 0; i < lenght; i++)
-		function(array[i]);
+	DiamondTrap D("Diamond");
+
+	D.attack("ennemy");
+	D.takeDamage(20);
+	D.beRepaired(10);
+	D.whoAmI();
+	return (0);
 }

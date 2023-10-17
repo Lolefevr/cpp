@@ -1,20 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   hfile.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lolefevr <lolefevr@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 16:00:46 by lolefevr          #+#    #+#             */
-/*   Updated: 2023/10/17 16:00:52 by lolefevr         ###   ########.fr       */
+/*   Created: 2023/09/02 10:22:48 by lolefevr          #+#    #+#             */
+/*   Updated: 2023/09/26 12:48:00 by lolefevr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-template <typename T>
-void iter(T *array, int lenght, void (*function)(T&))
-{
-	for (int i = 0; i < lenght; i++)
-		function(array[i]);
-}
+class	AMateria;
+class	IMateriaSource;
+class	ICharacter;
+class	MateriaSource;
+class	Character;
+class	Cure;
+class	Ice;
+
+#include <iostream>
+#include <string>
+#include "AMateria.hpp"
+#include "Cure.hpp"
+#include "Ice.hpp"
+#include "ICharacter.hpp"
+#include "Character.hpp"
+#include "IMateriaSource.hpp"
+#include "MateriaSource.hpp"
+#include <cstdio>

@@ -1,20 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lolefevr <lolefevr@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 16:00:46 by lolefevr          #+#    #+#             */
-/*   Updated: 2023/10/17 16:00:52 by lolefevr         ###   ########.fr       */
+/*   Created: 2023/08/17 09:11:43 by lolefevr          #+#    #+#             */
+/*   Updated: 2023/08/19 09:28:21 by lolefevr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-template <typename T>
-void iter(T *array, int lenght, void (*function)(T&))
+#include <string>
+#include <iostream>
+
+class WrongAnimal
 {
-	for (int i = 0; i < lenght; i++)
-		function(array[i]);
-}
+	protected:
+
+	std::string	_type;
+
+	public:
+
+	WrongAnimal();
+	~WrongAnimal();
+
+	void			makeSound() const;
+	std::string		getType() const;
+};

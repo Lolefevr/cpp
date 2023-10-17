@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lolefevr <lolefevr@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 16:00:46 by lolefevr          #+#    #+#             */
-/*   Updated: 2023/10/17 16:00:52 by lolefevr         ###   ########.fr       */
+/*   Created: 2023/08/14 10:11:19 by lolefevr          #+#    #+#             */
+/*   Updated: 2023/08/15 10:48:24 by lolefevr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "Harl.hpp"
+#include <iostream>
 
-template <typename T>
-void iter(T *array, int lenght, void (*function)(T&))
+int main(int argc, char **argv)
 {
-	for (int i = 0; i < lenght; i++)
-		function(array[i]);
+	Harl	harl;
+
+	if (argc != 2)
+	{
+		std::cout << "Usage: ./HarlFilter [DEBUG/INFO/WARNING/ERROR]" << std::endl;
+		return (1);
+	}
+	harl.complain(argv[1]);
+	return (0);
 }

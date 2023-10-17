@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lolefevr <lolefevr@student.42perpignan.    +#+  +:+       +#+        */
+/*   By: rrodor <rrodor@student.42perpignan.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 16:00:46 by lolefevr          #+#    #+#             */
-/*   Updated: 2023/10/17 16:00:52 by lolefevr         ###   ########.fr       */
+/*   Created: 2023/08/01 17:07:23 by rrodor            #+#    #+#             */
+/*   Updated: 2023/08/01 17:13:42 by rrodor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "ClapTrap.hpp"
 
-template <typename T>
-void iter(T *array, int lenght, void (*function)(T&))
+int main()
 {
-	for (int i = 0; i < lenght; i++)
-		function(array[i]);
+	ClapTrap P1("P1");
+	ClapTrap P2("P2");
+
+	P1.attack("P2");
+	P2.takeDamage(10);
+	P2.beRepaired(10);
+	return (0);
 }

@@ -1,20 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lolefevr <lolefevr@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 16:00:46 by lolefevr          #+#    #+#             */
-/*   Updated: 2023/10/17 16:00:52 by lolefevr         ###   ########.fr       */
+/*   Created: 2023/08/17 09:09:01 by lolefevr          #+#    #+#             */
+/*   Updated: 2023/08/28 13:47:35 by lolefevr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "Cat.hpp"
+//#include "Brain.hpp"
 
-template <typename T>
-void iter(T *array, int lenght, void (*function)(T&))
+Cat::Cat() : Animal()
 {
-	for (int i = 0; i < lenght; i++)
-		function(array[i]);
+	std::cout << "Constructor Cat called" << std::endl;
+	this->_type = "Cat";
+	this->_brain = new Brain();
+}
+
+Cat::~Cat()
+{
+	std::cout << "Destructeur Cat called" << std::endl;
+	delete _brain;
+}
+
+void	Cat::makeSound() const
+{
+	std::cout << "MiAoUoUoouU" << std::endl;
 }

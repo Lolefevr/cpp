@@ -1,20 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lolefevr <lolefevr@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 16:00:46 by lolefevr          #+#    #+#             */
-/*   Updated: 2023/10/17 16:00:52 by lolefevr         ###   ########.fr       */
+/*   Created: 2023/08/16 00:52:05 by lolefevr          #+#    #+#             */
+/*   Updated: 2023/09/26 11:54:10 by lolefevr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-template <typename T>
-void iter(T *array, int lenght, void (*function)(T&))
+# include "ClapTrap.hpp"
+
+class ScavTrap : virtual public ClapTrap
 {
-	for (int i = 0; i < lenght; i++)
-		function(array[i]);
-}
+	private:
+
+	public:
+
+	ScavTrap();
+	ScavTrap(const ScavTrap &other);
+	ScavTrap &operator=(const ScavTrap &other);
+	ScavTrap(std::string name);
+	~ScavTrap();
+
+	void	attack(const std::string& target);
+	void	guardGate();
+};
